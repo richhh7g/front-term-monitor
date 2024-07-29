@@ -22,6 +22,12 @@
       }
     ],
     "paths": {
+      "@atomic": [
+        "./src/atomic"
+      ],
+      "@atomic/*": [
+        "./src/atomic/*"
+      ],
       "@app/*": [
         "./src/app/*"
       ],
