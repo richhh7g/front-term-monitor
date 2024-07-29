@@ -1,5 +1,5 @@
-import { Input } from "@atomic/atm.input";
+import { Separator } from "@atomic/atm.separator";
 
 export default function Home() {
-  return <Input />;
+  return <Separator />;
 }
