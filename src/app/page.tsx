@@ -1,5 +1,5 @@
-import { Button } from "@atomic/atm.button";
+import { Input } from "@atomic/atm.input";
 
 export default function Home() {
-  return <Button>Hello World</Button>;
+  return <Input />;
 }
