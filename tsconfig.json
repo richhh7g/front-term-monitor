@@ -31,6 +31,12 @@
       "@app/*": [
         "./src/app/*"
       ],
+      "@components": [
+        "./src/components"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
     },
   },
   "include": [

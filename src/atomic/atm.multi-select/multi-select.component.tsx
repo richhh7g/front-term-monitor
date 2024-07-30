@@ -89,7 +89,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
           inputRef.current?.focus();
         }}
       >
-        <div className="group rounded-md border border-input px-3 py-2 text-sm ring-blue-200 focus-within:ring-2 focus-within:ring-offset-2">
+        <div className="group rounded-md border border-input px-3 py-2 text-sm ring-purple-200 focus-within:ring-2 focus-within:ring-offset-2">
           <div className="flex flex-wrap gap-2">
             {selected.map((option) => {
               return (
@@ -101,7 +101,7 @@ export const MultiSelect = forwardRef<HTMLDivElement, MultiSelectProps>(
                 >
                   {option.label}
                   <button
-                    className="ml-1 -mr-1 rounded-full outline-none ring-blue-200 focus:ring-2 focus:ring-offset-2"
+                    className="ml-1 -mr-1 rounded-full outline-none ring-purple-200 focus:ring-2 focus:ring-offset-2"
                     onKeyDown={(e) => {
                       if (e.key === "Enter") {
                         handleUnselect(option);
