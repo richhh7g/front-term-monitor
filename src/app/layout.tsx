@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
+import { Toaster } from "@atomic/mol.toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +10,6 @@ export const metadata: Metadata = {
   description:
     "Ferramenta de monitoramento de termos de marca para sites concorrentes que são patrocinados usando Google Ads.",
 };
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Toaster />
+        {children}
+      </body>
     </html>
   );
 }
