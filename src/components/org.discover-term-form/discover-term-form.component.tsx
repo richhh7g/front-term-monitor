@@ -6,7 +6,6 @@ import { MultiSelect } from "@atomic/atm.multi-select";
 import { ResponsiveImage } from "@atomic/atm.responsive-image";
 import { Form } from "@atomic/obj.form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import Image from "next/image";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -44,7 +43,6 @@ export const DiscoverTermForm = () => {
         <div>
           <h1 className="text-3xl text-gray-900 font-semibold mb-2">
             Term Monitor
-            {/* Checar termos potencialmente agressivos a sua marca */}
           </h1>
           <p className="text-gray-600">
             Checar termos potencialmente agressivos a sua marca.
