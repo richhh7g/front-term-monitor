@@ -37,6 +37,18 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@infra": [
+        "./src/infra"
+      ],
+      "@infra/*": [
+        "./src/infra/*"
+      ],
+      "@model": [
+        "./src/model"
+      ],
+      "@model/*": [
+        "./src/model/*"
+      ],
     },
   },
   "include": [
