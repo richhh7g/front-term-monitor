@@ -5,27 +5,45 @@ import { Input } from "@atomic/atm.input";
 import { MultiSelect } from "@atomic/atm.multi-select";
 import { ResponsiveImage } from "@atomic/atm.responsive-image";
 import { Form } from "@atomic/obj.form";
+import { useCheckTerms } from "@domain/term";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { CheckCircle, XCircle } from "@phosphor-icons/react";
 import React from "react";
 import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 import { z } from "zod";
 
 const formSchema = z.object({
-  terms: z.array(z.string()).min(1, "Necessário adicionar pelo menos um termo"),
   email: z.string().min(1, "Email obrigatório").email("Email inválido"),
+  termos: z
+    .array(z.string())
+    .min(1, "Necessário adicionar pelo menos um termo"),
 });
 
 export const DiscoverTermForm = () => {
+  const [checkTerms, { isLoading }] = useCheckTerms({
+    onCompleted: (data) => {
+      toast(data.text, {
+        icon: <CheckCircle weight="fill" className="text-emerald-500 size-5" />,
+      });
+    },
+    onError: (error) => {
+      toast(error.message, {
+        icon: <XCircle weight="fill" className="text-red-500 size-5" />,
+      });
+    },
+  });
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       email: "",
-      terms: [],
+      termos: [],
     },
   });
 
   function handleSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    checkTerms(values);
   }
 
   return (
@@ -38,7 +56,7 @@ export const DiscoverTermForm = () => {
           className="h-20"
           fit="contain"
           src="/images/monitor.png"
-          alt="Term Alarms"
+          alt="Term Monitor"
         />
         <div>
           <h1 className="text-3xl text-gray-900 font-semibold mb-2">
@@ -51,7 +69,7 @@ export const DiscoverTermForm = () => {
 
         <Form.Field
           control={form.control}
-          name="terms"
+          name="termos"
           render={({ field }) => (
             <Form.Item>
               <Form.Label>Termos</Form.Label>
@@ -80,7 +98,7 @@ export const DiscoverTermForm = () => {
           )}
         />
 
-        <Button type="submit" disabled={false} className="w-full">
+        <Button type="submit" disabled={isLoading} className="w-full">
           Descobrir
         </Button>
       </form>
