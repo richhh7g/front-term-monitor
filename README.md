@@ -21,8 +21,8 @@ Este projeto e o frontend do Term Monitor, uma ferramenta de monitoramento de te
 
 ### Variáveis de Ambiente
 
-Crie um arquivo `.env.local` com as configurações necessárias. Você pode usar o arquivo de exemplo `.env.example` como referência.
+Crie um arquivo `.env` com as configurações necessárias. Você pode usar o arquivo de exemplo `.env.example` como referência.
 
 ```bash
-cp .env.example .env.local
+cp .env .env.local
 ```
