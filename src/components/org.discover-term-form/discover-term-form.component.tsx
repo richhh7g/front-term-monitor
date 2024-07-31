@@ -8,6 +8,7 @@ import { Form } from "@atomic/obj.form";
 import { useCheckTerms } from "@domain/term";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle, XCircle } from "@phosphor-icons/react";
+import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -52,12 +53,18 @@ export const DiscoverTermForm = () => {
         onSubmit={form.handleSubmit(handleSubmit)}
         className="space-y-5 w-full"
       >
-        <ResponsiveImage
-          className="h-20"
-          fit="contain"
-          src="/images/monitor.png"
-          alt="Term Monitor"
-        />
+        <Link
+          href="https://github.com/richhh7g/front-term-monitor"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <ResponsiveImage
+            className="h-20"
+            fit="contain"
+            src="/images/monitor.png"
+            alt="Term Monitor"
+          />
+        </Link>
         <div>
           <h1 className="text-3xl text-gray-900 font-semibold mb-2">
             Term Monitor
@@ -101,6 +108,15 @@ export const DiscoverTermForm = () => {
         <Button type="submit" disabled={isLoading} className="w-full">
           Descobrir
         </Button>
+
+        <Link
+          href="https://github.com/richhh7g/front-term-monitor"
+          target="_blank"
+          rel="noreferrer"
+          className="text-sm text-purple-600 underline inline-block mt-4"
+        >
+          Ver repositório do projeto.
+        </Link>
       </form>
     </Form>
   );
