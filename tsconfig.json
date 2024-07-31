@@ -37,6 +37,12 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@data": [
+        "./src/data"
+      ],
+      "@data/*": [
+        "./src/data/*"
+      ],
       "@infra": [
         "./src/infra"
       ],
