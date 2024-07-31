@@ -26,3 +26,29 @@ Crie um arquivo `.env` com as configurações necessárias. Você pode usar o ar
 ```bash
 cp .env .env.local
 ```
+
+### Executando Localmente
+
+#### Ambiente de desenvolvimento
+
+Para iniciar o servidor em modo de desenvolvimento, use o comando:
+
+```bash
+npm run dev
+```
+
+#### Ambiente de Produção
+
+Para iniciar o servidor em modo de produção, siga os passos abaixo:
+
+1. Primeiro, transpile o código usando o comando:
+
+```bash
+npm run build
+```
+
+2. Em seguida, inicie o servidor usando o comando:
+
+```bash
+npm run start
+```
